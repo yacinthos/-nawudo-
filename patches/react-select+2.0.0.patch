@@ -1,0 +1,21 @@
+patch-package
+--- a/node_modules/react-select/lib/Select.js
++++ b/node_modules/react-select/lib/Select.js
+@@ -805,7 +805,7 @@ var Select = function (_Component) {
+       }
+ 
+       if (isMulti) {
+-        var selectValues = selectValue.map(function (opt) {
++        var selectValues = selectValue.map(function (opt,key) {
+           var isFocused = opt === focusedValue;
+           return _react2.default.createElement(
+             MultiValue,
+@@ -817,7 +817,7 @@ var Select = function (_Component) {
+               },
+               isFocused: isFocused,
+               isDisabled: isDisabled,
+-              key: _this4.getOptionValue(opt),
++              key: _this4.getOptionValue(opt)||key,
+               removeProps: {
+                 onClick: function onClick() {
+                   return _this4.removeValue(opt);

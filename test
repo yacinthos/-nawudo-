@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+'use strict';
+
+function sayHello(){
+
+    let whatToSay;
+
+    setTimeout(function(){
+
+        whatToSay = 'Hello !!';
+
+    }, 1000);
+
+}
+
+sayHello()
+
+function myPromise() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            return reject('hello promise');
+            ;
+        }, 2000);
+    });
+}
+myPromise().then( result => { console.log(result) ; }).catch( err =>(console.log(err))
+
+) ;
+let somme = x => x+1;
+console.log(somme(5));
